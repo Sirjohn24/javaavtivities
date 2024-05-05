@@ -1,0 +1,32 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+class FileReaderClass {
+    public void readFromFile(String filename) {
+        try {
+            FileReader fileReader = new FileReader(filename);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line;
+            System.out.println("Reading data from file...");
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found. Please make sure the file exists and try again.");
+        } catch (IOException e) {
+            System.out.println("Error: An error occurred while reading the file.");
+            e.printStackTrace();
+        }
+    }
+}
+
+public class FileReaderApp {
+    public static void main(String[] args) {
+        FileReaderClass fileReader = new FileReaderClass();
+        String filename = "example.txt"; // Change this to your file name
+        fileReader.readFromFile(filename);
+    }
+}
