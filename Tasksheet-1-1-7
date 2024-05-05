@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class ArithmeticOperations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter two numbers
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        // Perform arithmetic operations and print the results
+        System.out.println("Addition: " + addition(num1, num2));
+        System.out.println("Subtraction: " + subtraction(num1, num2));
+        System.out.println("Multiplication: " + multiplication(num1, num2));
+        System.out.println("Division: " + division(num1, num2));
+
+        scanner.close();
+    }
+
+    // Method to perform addition
+    public static double addition(double a, double b) {
+        return a + b;
+    }
+
+    // Method to perform subtraction
+    public static double subtraction(double a, double b) {
+        return a - b;
+    }
+
+    // Method to perform multiplication
+    public static double multiplication(double a, double b) {
+        return a * b;
+    }
+
+    // Method to perform division
+    public static double division(double a, double b) {
+        // Check if the divisor is not zero
+        if (b != 0) {
+            return a / b;
+        } else {
+            // If divisor is zero, return NaN (Not a Number)
+            return Double.NaN;
+        }
+    }
+}
